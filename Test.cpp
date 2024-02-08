@@ -2,18 +2,9 @@
 using namespace std;
 
 const int sizing = 5;
-int A[sizing];
+int Arr[sizing];
 int top=0;
 
-
-int underflow(){
-    if (top==0){
-        return 1;
-    }
-    else{
-        return 0;
-    }
-}
 
 int overflow(){
     if(top==sizing){
@@ -28,7 +19,7 @@ void push(int x){
         cout << "Overflow" << endl;
         overflow();
     }else{
-        A[top]=x;
+        Arr[top]=x;
         top++;
     }
 }
@@ -38,8 +29,8 @@ int pop(){
         cout << "Underflow" << endl;
         return underflow();
     }else{
-        int temp = A[top-1];
-        A[top-1]=-10000;
+        int temp = Arr[top-1];
+        Arr[top-1]=-10000;
         top--;
         return temp;
     }
@@ -50,7 +41,7 @@ void print() {
         underflow();
     }else{
         for (int i=0;i <= top-1;i++){
-            cout << A[i] << " ";
+            cout << Arr[i] << " ";
     }
 }
 }
